@@ -1,0 +1,7 @@
+.pomodoro-fullscreen {
+    overflow: hidden !important; /* disables scrolling and hides scrollbars */
+}
+
+.pomodoro-fullscreen nav {
+    display: none !important;
+}
