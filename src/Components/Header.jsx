@@ -19,37 +19,36 @@ export default function Header() {
                     <div>
                         <img className='w-10 md:w-10 m-2' src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/MoEYS-Cambodia.svg/1200px-MoEYS-Cambodia.svg.png" alt="" />
                     </div>
-                    <div className={`md:static nav-links duration-500 
-                                    absolute bg-white
-                                    md:w-auto w-full
-                                    left-0 ${isMenuOpen ? 'top-[98%]' : 'top-[-600px]'}
-                                    flex items-center p-5
-                    `}>
+                    <div className={`md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 md:w-auto w-full transition-all duration-500 ease-in-out ${
+                        isMenuOpen 
+                            ? 'top-[98%] opacity-100 visible' 
+                            : 'top-[-1000px] md:opacity-100 opacity-0 md:visible invisible'
+                    } md:py-0 py-5 px-5`}>
                         <ul className='flex md:flex-row flex-col md:gap-[4vw] gap-8'>
                             <li>
-                                <Link to="/" onClick={closeMenu}>Home</Link>
+                                <Link to="/" onClick={closeMenu} className="hover:text-gray-500 transition-colors">Home</Link>
                             </li>
                             <li>
-                                <Link to="/pomodoro" onClick={closeMenu}>Pomodoro</Link>
+                                <Link to="/pomodoro" onClick={closeMenu} className="hover:text-gray-500 transition-colors">Pomodoro</Link>
                             </li>
                             <li>
-                                <Link to="/study" onClick={closeMenu}>Self study</Link>
+                                <Link to="/study" onClick={closeMenu} className="hover:text-gray-500 transition-colors">Self study</Link>
                             </li>
                             <li>
-                                <Link to="/random" onClick={closeMenu}>Random</Link>
+                                <Link to="/random" onClick={closeMenu} className="hover:text-gray-500 transition-colors">Random</Link>
                             </li>
                             <li>
-                                <Link to="/game" onClick={closeMenu}>Game</Link>
+                                <Link to="/game" onClick={closeMenu} className="hover:text-gray-500 transition-colors">Game</Link>
                             </li>
                         </ul>
                     </div>
                     <div className='flex items-center gap-5'>
-                        <button className='bg-gray-900 text-white px-5 py-2 rounded-full'>
+                        <button className='bg-gray-900 text-white px-5 py-2 rounded-full hover:bg-gray-700 transition-colors'>
                             <Link to="/pomodoro">Start</Link>
                         </button>
                         <ion-icon 
                             name={isMenuOpen ? "close" : "menu"} 
-                            className='text-3xl md:hidden cursor-pointer'
+                            className='text-3xl md:hidden cursor-pointer hover:text-gray-500 transition-colors'
                             onClick={toggleMenu}
                         ></ion-icon>
                     </div>

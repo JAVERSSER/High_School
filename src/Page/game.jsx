@@ -92,9 +92,8 @@ const Square = ({ value, onClick, darkMode }) => {
   return (
     <button
       onClick={onClick}
-      className={`flex items-center justify-center text-3xl font-bold h-20 w-20 ${
-        darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'
-      } rounded-lg`}
+      className={`flex items-center justify-center text-3xl font-bold h-20 w-20 ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'
+        } rounded-lg`}
     >
       {value}
     </button>
@@ -160,9 +159,8 @@ const TicTacToe = ({ darkMode }) => {
       </div>
       <button
         onClick={resetGame}
-        className={`mt-6 px-4 py-2 rounded-lg ${
-          darkMode ? 'bg-purple-600 hover:bg-purple-700' : 'bg-blue-500 hover:bg-blue-600'
-        } text-white`}
+        className={`mt-6 px-4 py-2 rounded-lg ${darkMode ? 'bg-purple-600 hover:bg-purple-700' : 'bg-blue-500 hover:bg-blue-600'
+          } text-white`}
       >
         Reset Game
       </button>
@@ -228,10 +226,10 @@ const MemoryGame = ({ darkMode }) => {
             key={card.id}
             onClick={() => handleClick(card.id)}
             className={`flex items-center justify-center h-16 text-2xl rounded-lg ${flipped.includes(card.id) || solved.includes(card.id)
-                ? 'bg-blue-500 text-white'
-                : darkMode
-                  ? 'bg-gray-700 hover:bg-gray-600'
-                  : 'bg-gray-200 hover:bg-gray-300'
+              ? 'bg-blue-500 text-white'
+              : darkMode
+                ? 'bg-gray-700 hover:bg-gray-600'
+                : 'bg-gray-200 hover:bg-gray-300'
               }`}
             disabled={flipped.includes(card.id) || solved.includes(card.id)}
           >
@@ -268,7 +266,7 @@ const SnakeGame = ({ darkMode }) => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
+
     checkIfMobile();
     window.addEventListener('resize', checkIfMobile);
     return () => window.removeEventListener('resize', checkIfMobile);
@@ -368,12 +366,18 @@ const SnakeGame = ({ darkMode }) => {
   };
 
   const resetGame = () => {
+    // Your existing reset logic here
     setSnake([{ x: 10, y: 10 }]);
     setFood({ x: 5, y: 5 });
     setDirection('RIGHT');
     setGameOver(false);
     setScore(0);
     setIsPaused(false);
+
+    // Scroll to top smoothly
+    if (window.innerWidth <= 768) { // common breakpoint for tablets and phones
+      window.scrollTo({ top: 200, behavior: 'smooth' });
+    }
   };
 
   const handleDirectionChange = (newDirection) => {
@@ -410,8 +414,8 @@ const SnakeGame = ({ darkMode }) => {
       <div className="flex justify-center mb-6">
         <div
           className={`relative border-2 ${darkMode ? 'border-gray-600' : 'border-gray-300'}`}
-          style={{ 
-            width: gridSize * cellSize, 
+          style={{
+            width: gridSize * cellSize,
             height: gridSize * cellSize,
             minWidth: gridSize * cellSize
           }}
@@ -449,9 +453,8 @@ const SnakeGame = ({ darkMode }) => {
           <div className="flex justify-center mb-3">
             <button
               onClick={() => handleDirectionChange('UP')}
-              className={`w-16 h-16 rounded-full flex items-center justify-center ${
-                darkMode ? 'bg-gray-700 active:bg-gray-600' : 'bg-gray-200 active:bg-gray-300'
-              } transition-colors`}
+              className={`w-16 h-16 rounded-full flex items-center justify-center ${darkMode ? 'bg-gray-700 active:bg-gray-600' : 'bg-gray-200 active:bg-gray-300'
+                } transition-colors`}
               disabled={gameOver || isPaused}
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -462,9 +465,8 @@ const SnakeGame = ({ darkMode }) => {
           <div className="flex justify-center gap-16">
             <button
               onClick={() => handleDirectionChange('LEFT')}
-              className={`w-16 h-16 rounded-full flex items-center justify-center ${
-                darkMode ? 'bg-gray-700 active:bg-gray-600' : 'bg-gray-200 active:bg-gray-300'
-              } transition-colors`}
+              className={`w-16 h-16 mr-10 rounded-full flex items-center justify-center ${darkMode ? 'bg-gray-700 active:bg-gray-600' : 'bg-gray-200 active:bg-gray-300'
+                } transition-colors`}
               disabled={gameOver || isPaused}
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -473,9 +475,8 @@ const SnakeGame = ({ darkMode }) => {
             </button>
             <button
               onClick={() => handleDirectionChange('RIGHT')}
-              className={`w-16 h-16 rounded-full flex items-center justify-center ${
-                darkMode ? 'bg-gray-700 active:bg-gray-600' : 'bg-gray-200 active:bg-gray-300'
-              } transition-colors`}
+              className={`w-16 h-16 rounded-full flex items-center justify-center ${darkMode ? 'bg-gray-700 active:bg-gray-600' : 'bg-gray-200 active:bg-gray-300'
+                } transition-colors`}
               disabled={gameOver || isPaused}
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -486,9 +487,8 @@ const SnakeGame = ({ darkMode }) => {
           <div className="flex justify-center mt-3">
             <button
               onClick={() => handleDirectionChange('DOWN')}
-              className={`w-16 h-16 rounded-full flex items-center justify-center ${
-                darkMode ? 'bg-gray-700 active:bg-gray-600' : 'bg-gray-200 active:bg-gray-300'
-              } transition-colors`}
+              className={`w-16 h-16 rounded-full flex items-center justify-center ${darkMode ? 'bg-gray-700 active:bg-gray-600' : 'bg-gray-200 active:bg-gray-300'
+                } transition-colors`}
               disabled={gameOver || isPaused}
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -504,17 +504,15 @@ const SnakeGame = ({ darkMode }) => {
         <button
           onClick={() => setIsPaused(!isPaused)}
           disabled={gameOver}
-          className={`px-5 py-2 rounded-lg ${
-            darkMode ? 'bg-yellow-600 hover:bg-yellow-700' : 'bg-yellow-500 hover:bg-yellow-600'
-          } text-white transition-colors`}
+          className={`px-5 py-2 rounded-lg ${darkMode ? 'bg-yellow-600 hover:bg-yellow-700' : 'bg-yellow-500 hover:bg-yellow-600'
+            } text-white transition-colors`}
         >
           {isPaused ? 'Resume' : 'Pause'}
         </button>
         <button
           onClick={resetGame}
-          className={`px-5 py-2 rounded-lg ${
-            darkMode ? 'bg-purple-600 hover:bg-purple-700' : 'bg-blue-500 hover:bg-blue-600'
-          } text-white transition-colors`}
+          className={`px-5 py-2 rounded-lg ${darkMode ? 'bg-purple-600 hover:bg-purple-700' : 'bg-blue-500 hover:bg-blue-600'
+            } text-white transition-colors`}
         >
           New Game
         </button>
@@ -523,7 +521,7 @@ const SnakeGame = ({ darkMode }) => {
       {/* Instructions */}
       <div className={`text-sm text-center ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
         <p>
-          {isMobile ? 'Use buttons above' : 'Arrow keys'} to move • 
+          {isMobile ? 'Use buttons above' : 'Arrow keys'} to move •
           Space to {isPaused ? 'resume' : 'pause'}
         </p>
       </div>
