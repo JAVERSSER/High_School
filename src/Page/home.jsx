@@ -133,7 +133,7 @@ const home = () => {
         <img
           src="https://scontent.fpnh2-2.fna.fbcdn.net/v/t39.30808-6/470867885_994821362671287_4902368504436590970_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGchzV_dbzDl9LM4KWJeQq726PE2zSre_jbo8TbNKt7-PNDNMgd8gSvaNFwKg60PQ4_AxABz-R2cQapOzoD4hi0&_nc_ohc=K_msYhWWb9YQ7kNvwGpQsg2&_nc_oc=AdmEMS2Q7wqQQZ6G2VTBoU9ZBJR1Z4oDSGbxgFUD7m3VU4QIxB5nh044wyTq9ku8J20&_nc_zt=23&_nc_ht=scontent.fpnh2-2.fna&_nc_gid=vxHzB2ZGBrUA9Ugts8Ysrg&oh=00_AfJi5Vrp3NdU5kY77q8X20VhgJPyp1TCThdSuhlaf97Eqw&oe=682F7DD8"
           alt="Workspace"
-          className="max-w-full"
+          className="max-w-full block mx-auto"
         />
         <p className="text-gray-700 text-lg font-medium max-w-2xl mx-auto mt-6">
           This is the MoEYS website, free and helpful for all students.
