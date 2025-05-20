@@ -81,9 +81,9 @@ const random = () => {
         </div>
         
         {/* Main Content */}
-        <div className="m-4 flex flex-col lg:flex-row ">
+        <div className="flex flex-col lg:flex-row mt-2 ">
           {/* Name Input Section */}
-          <div className="flex-1">
+          <div className="m-2">
             <div className="flex mb-4">
               <input
                 type="text"
