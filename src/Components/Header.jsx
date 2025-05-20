@@ -41,12 +41,14 @@ export default function Header() {
                             </li>
                         </ul>
                     </div>
+                    
                     {/* <!-- AtoZSEOTools Counter Code START --> */}
                     <a href="https://toolsbox.com/website-hit-counter" target="_blank" title="Web Counter">
                         <img src="https://toolsbox.com/website-hit-counter/count/&style=style1&show=p&num=4&uid=sw" title="Web Counter"
                             alt="AtoZSEOTools Web Counter" />
                     </a>
                     {/* <!-- AtoZSEOTools Counter Code END --> */}
+
                     <div className='flex items-center gap-5'>
                         <button className='bg-gray-900 text-white px-5 py-2 rounded-full hover:bg-gray-700 transition-colors'>
                             <Link to="/pomodoro">Start</Link>
