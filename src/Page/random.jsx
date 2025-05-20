@@ -81,9 +81,9 @@ const random = () => {
         </div>
         
         {/* Main Content */}
-        <div className="flex flex-col lg:flex-row mt-2 ">
+        <div className="m-4 flex flex-col lg:flex-row ">
           {/* Name Input Section */}
-          <div className="m-2">
+          <div className="flex-1">
             <div className="flex mb-4">
               <input
                 type="text"
@@ -91,7 +91,8 @@ const random = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && addName()}
                 placeholder="Add a name"
-                className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-white/50"
+                className="flex-1 px-4 py-2 w-10 bg-white/10 border border-white/20 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-white/50"
+                
               />
               <button
                 onClick={addName}
