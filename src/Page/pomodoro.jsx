@@ -175,7 +175,11 @@ const Pomodoro = () => {
   };
 
   const resetAll = () => {
-    setSettings(defaultSettings);
+    setSettings((prev) => ({
+      ...defaultSettings,
+      selectedSound: prev.selectedSound, // Keep current sound
+    }));
+
     setPomodoroCount(0);
     setIsWorkTime(true);
     setIsActive(false);
@@ -183,9 +187,12 @@ const Pomodoro = () => {
     setSeconds(0);
     alertShownRef.current = false;
 
-    localStorage.removeItem('pomodoro-settings');
+    // Only clear pomodoro state, not sound from settings
+    const savedSound = settings.selectedSound;
     localStorage.removeItem('pomodoro-state');
+    localStorage.setItem('pomodoro-settings', JSON.stringify({ ...defaultSettings, selectedSound: savedSound }));
   };
+
 
   const handleSettingsSubmit = (e) => {
     e.preventDefault();
